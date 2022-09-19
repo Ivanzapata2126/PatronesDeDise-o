@@ -52,11 +52,20 @@ class MementoEjemplo {
         Originator originator = new Originator();
         originator.set("Estado1");
         originator.set("Estado2");
-        caretaker.addMemento( originator.salvarParaMemento() );
+        caretaker.addMemento( originator.salvandoParaMemento() );
         originator.set("Estado3");
-        caretaker.addMemento( originator.salvarParaMemento() );
+        caretaker.addMemento( originator.salvandoParaMemento() );
         originator.set("Estado4");
 
-        originator.recuperarDesdeMemento( caretaker.getMemento(1) );
+        originator.recuperandoDesdeMemento( caretaker.getMemento(0) );
+
+        //Salida
+        //Originator: Situando Estado a Estado1
+        //Originator: Situando Estado a Estado2
+        //Originator: Salvando a Memento.
+        //Originator: Situando Estado a Estado3
+        //Originator: Salvando a Memento.
+        //Originator: Situando Estado a Estado4
+        //Originator: Estado despues de restaurar desde Memento: Estado2
     }
 }
